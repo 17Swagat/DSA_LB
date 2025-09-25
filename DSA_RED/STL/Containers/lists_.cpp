@@ -21,12 +21,17 @@ void printVector(const vector<int>& vec) {
 int main(){
     list<int> list1 = {1, 2, 3, 4, 5};
 
-    // Inserting elements into <list>
-    auto it = list1.begin();
-    advance(it, 2); // Move iterator to the 3rd position
-    list1.insert(it, 10); // Insert 10 at the 3rd position
+    // #1
+    list1.erase(list1.begin()); // Erase first element
+    printList(list1);
 
-    printList(list1); // Output: 1 2 10 3 4 5
+    // #2
+    list1 = {1, 2, 3, 4, 5};
+    list1.erase(
+        next(list1.begin(), 1), 
+        next(list1.end() , -1)
+    ); 
+    printList(list1);
 
     return 0;
 }
