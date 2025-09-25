@@ -14,8 +14,8 @@ int main(){
     
     vector<int> vec1 = {1, 2, 3, 4, 5};
 
-    vec1.erase(vec1.begin() + 1); // Erase element at index 1
-    printVector(vec1); // Output: 1 3 4 5 
-
+    vec1.erase(vec1.begin() + 1, vec1.end()-1); // Erase elements from index 1 to index 3 (4 is not included)
+    printVector(vec1); // Output: 1 5
+    
     return 0;
 }
