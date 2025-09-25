@@ -13,13 +13,7 @@ void printVector(vector<int> &vec){
 int main(){
     
     vector<int> vec1 = {1, 2, 3, 4, 5};
-    cout << vec1.front() << "\n"; // 1
-    cout << vec1.back() << "\n";  // 5
-    cout << vec1.empty() << "\n"; // 0 (false)
-    vec1.clear(); // removes all elements
-    cout << vec1.empty() << "\n"; // 1 (true)
-    
-    printVector(vec1); // (prints nothing)
+    cout << vec1.max_size() << "\n"; // Maximum size of the vector in the system
 
     return 0;
 }
