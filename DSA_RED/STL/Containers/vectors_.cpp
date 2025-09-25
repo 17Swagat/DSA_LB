@@ -13,8 +13,15 @@ void printVector(vector<int> &vec){
 int main(){
     
     // 2D Vector Declaration, also specifying size
-    vector<vector<int>> vec(3, vector<int>(4, 10)); // 3 rows and 4 columns initialized to 10
-    printVector(vec[0]); // Print first row
+    vector<vector<int>> vec = {
+        {1, 2, 3},
+        {4, 5, 6},
+        {7, 8, 9}
+    };
+
+    for (auto row: vec) {
+        printVector(row);
+    }
 
     return 0;
 }
