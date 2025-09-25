@@ -1,20 +1,20 @@
 #include <iostream>
 #include <map>
+#include <tuple>
 
 using namespace std;
 
 int main()
 {
-    map<int, pair<string, int>> m = {
-        {1, {"student 1", 23}},
-        {2, {"student 2", 53}},
-        {3, {"student 3", 93}}
+    map<int, string> m = {
+        {3, "three"},
+        {1, "one"},
+        {2, "two"},
     };
 
     for (auto &item: m){
-        cout << item.first << " -> " << item.second.first << ", " << item.second.second << endl;
+        cout << item.first << " : " << item.second << "\n";
     }
-
 
     return 0;
 }
