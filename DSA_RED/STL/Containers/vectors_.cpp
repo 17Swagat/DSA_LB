@@ -14,17 +14,18 @@ int main(){
 
     vector<int> vec1(5);
     vec1 = {1, 2, 3, 4, 5, 76};
-    for (auto i = vec1.begin(); i != vec1.end(); i++){
-        cout << *i << " ";
-    }
-    cout << "\n";
 
-    cout << vec1.size() << "\n"; // 6
-    cout << vec1.capacity() << "\n"; // 6
+    // Accessing first element using begin()
+    int num_1 = *vec1.begin();
+    cout << num_1 << "\n";
+    
+    // Dereferencing end() gives garbage value
+    int num_2 = *vec1.end();
+    cout << num_2 << "\n"; // Garbage value
 
-    // difference between size and capacity
-    // size is the number of elements present in the vector
-    // capacity is the number of elements that can be stored in the vector without reallocating memory
+    // Accessing last element using end()
+    int num_3 = *(vec1.end() - 1);
+    cout << num_3 << "\n";
 
     return 0;
 }
