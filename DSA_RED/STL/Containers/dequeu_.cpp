@@ -13,14 +13,7 @@ void printDeque(deque<int> &d){
 int main(){
     // #1
     deque<int> d = {1, 2, 3};
-    printDeque(d);
-    
-    // Pop Back
-    d.pop_back();
-    printDeque(d);
-
-    // Pop Front
-    d.pop_front();
+    d.insert(d.begin() + 1, 0);
     printDeque(d);
 
     return 0;
