@@ -13,19 +13,13 @@ void printVector(vector<int> &vec){
 int main(){
 
     vector<int> vec1(5);
+    cout << vec1.size() << "\n"; // 5
+    cout << vec1.capacity() << "\n"; // 5
+
     vec1 = {1, 2, 3, 4, 5, 76};
 
-    // Accessing first element using begin()
-    int num_1 = *vec1.begin();
-    cout << num_1 << "\n";
-    
-    // Dereferencing end() gives garbage value
-    int num_2 = *vec1.end();
-    cout << num_2 << "\n"; // Garbage value
-
-    // Accessing last element using end()
-    int num_3 = *(vec1.end() - 1);
-    cout << num_3 << "\n";
+    cout << vec1.size() << "\n"; // 6
+    cout << vec1.capacity() << "\n"; // 6 
 
     return 0;
 }
