@@ -1,15 +1,20 @@
 #include <iostream> 
 #include <stack>
 
-/*
- STL - stack
-    LIFO - Last In First Out
-    push() - add element to the top
-    pop() - remove element from the top
- */
 
 using namespace std;
 
 int main(){
+    stack<int> s;
+    s.push(10);
+    s.push(20);
+
+    cout<<s.top()<<endl;
+    s.pop();
+    cout<<s.top()<<endl;
+    s.pop();
+
+    cout << (s.empty() ? "true" : "false") << endl;
+
     return 0;
 }
