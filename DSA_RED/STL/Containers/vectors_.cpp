@@ -15,7 +15,7 @@ int main(){
     // 2D Vector Declaration, also specifying size
     vector<vector<int>> vec = {
         {1, 2, 3},
-        {4, 5, 6},
+        {4, 5, 6, 10, 20},
         {7, 8, 9}
     };
 
