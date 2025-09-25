@@ -6,24 +6,32 @@ using namespace std;
 
 int main(){
     
-    // What's wrong?
-    // queue<int> q = {1, 2, 3, 4, 5}; // ❌ [Error:]
-    // [Correct way]:=>
-    queue<int> q;
+    queue<int> q1;
+    queue<int> q2;
     // Pushing elements into the queue
     for (int i = 1; i <= 5; i++){
-        q.push(i);
-    }
-
-    // Last Element in Queue
-    cout << "Last Element: " << q.back() << endl;   // 5
-
-    // Unlike vectors/lists, in order to tranverse a queue, we have to pop elements
-    while (!q.empty()){
-        cout << q.front() << " ";
-        q.pop();    
+        q1.push(i);
     }
 
 
+    q2.swap(q1);
+
+
+    // Printing q1:
+    cout << "q1:=>\n";
+    while(!q1.empty()){
+        cout << q1.front() << " ";
+        q1.pop();
+    }
+    
+    // Printing q2:
+    cout << "\nq2:=>\n";
+    while (!q2.empty()){
+        cout << q2.front() << " ";
+        q2.pop();
+    }
+
+
+   
     return 0;
 }
