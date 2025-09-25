@@ -12,15 +12,9 @@ void printVector(vector<int> &vec){
 
 int main(){
     
-    vector<int> vec1 = {1, 2, 3, 4, 5};
-
-    // #1
-    vector<int>::iterator it = vec1.begin();
-    
-    while (it != vec1.end()){
-        cout << *it << " ";
-        it++;
-    }
+    // 2D Vector Declaration, also specifying size
+    vector<vector<int>> vec(3, vector<int>(4, 10)); // 3 rows and 4 columns initialized to 10
+    printVector(vec[0]); // Print first row
 
     return 0;
 }
