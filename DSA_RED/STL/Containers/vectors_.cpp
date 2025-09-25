@@ -13,10 +13,15 @@ void printVector(vector<int> &vec){
 int main(){
     
     vector<int> vec1 = {1, 2, 3, 4, 5};
-    vector<int> vec2 = {10, 20, 30, 40, 50};
-    vec1.swap(vec2);
-    printVector(vec1); // Should print: 10 20 30 40 50
-    printVector(vec2); // Should print: 1 2 3 4 5
+
+    // #1
+    vector<int>::iterator it = vec1.begin();
+    cout << *it << "\n"; // 1
     
+    // #2
+    for (int i = 0; i < vec1.size(); i++) {
+        cout << *(it + i) << " ";
+    }
+
     return 0;
 }
