@@ -13,9 +13,10 @@ void printVector(vector<int> &vec){
 int main(){
     
     vector<int> vec1 = {1, 2, 3, 4, 5};
-
-    vec1.erase(vec1.begin() + 1, vec1.end()-1); // Erase elements from index 1 to index 3 (4 is not included)
-    printVector(vec1); // Output: 1 5
+    vector<int> vec2 = {10, 20, 30, 40, 50};
+    vec1.swap(vec2);
+    printVector(vec1); // Should print: 10 20 30 40 50
+    printVector(vec2); // Should print: 1 2 3 4 5
     
     return 0;
 }
