@@ -16,11 +16,10 @@ int main(){
 
     // #1
     vector<int>::iterator it = vec1.begin();
-    cout << *it << "\n"; // 1
     
-    // #2
-    for (int i = 0; i < vec1.size(); i++) {
-        cout << *(it + i) << " ";
+    while (it != vec1.end()){
+        cout << *it << " ";
+        it++;
     }
 
     return 0;
