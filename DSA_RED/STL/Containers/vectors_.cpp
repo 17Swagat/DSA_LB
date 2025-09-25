@@ -1,27 +1,14 @@
 #include <iostream>
-#include <vector>
 
 using namespace std;
 
-void printVector(vector<int> &vec){
-    for (auto it : vec){
-        cout << it << " ";
-    }
-    cout << "\n";
-}
+// STL Container :-> List
+// * Doubly linked list
+// * Dynamic size
+// * Non-contiguous memory allocation
+// * Insertion and deletion at both ends in O(1) time
+// * No random access (no indexing)
 
 int main(){
-    
-    // 2D Vector Declaration, also specifying size
-    vector<vector<int>> vec = {
-        {1, 2, 3},
-        {4, 5, 6, 10, 20},
-        {7, 8, 9}
-    };
-
-    for (auto row: vec) {
-        printVector(row);
-    }
-
     return 0;
 }
