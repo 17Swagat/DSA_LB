@@ -11,17 +11,15 @@ void printVector(vector<int> &vec){
 }
 
 int main(){
-
-    vector<int> vec1(5, 1);
-    printVector(vec1);
-
-    vec1.push_back(2); // add an element at the end
-
-    printVector(vec1);
-
-    vec1.pop_back(); // pop the last element
-
-    printVector(vec1);
+    
+    vector<int> vec1 = {1, 2, 3, 4, 5};
+    cout << vec1.front() << "\n"; // 1
+    cout << vec1.back() << "\n";  // 5
+    cout << vec1.empty() << "\n"; // 0 (false)
+    vec1.clear(); // removes all elements
+    cout << vec1.empty() << "\n"; // 1 (true)
+    
+    printVector(vec1); // (prints nothing)
 
     return 0;
 }
