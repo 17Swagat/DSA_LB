@@ -4,18 +4,14 @@
 using namespace std;
 
 int main(){
-    list<int> myList;
+    list<int> list1 = {1, 2, 3, 4, 5};
 
-    // Adding elements to the list
-    myList.push_back(10);
-    myList.push_back(20);
-    myList.push_back(30);
-
-    // Displaying the elements in the list
-    for (int value : myList) {
-        cout << value << " ";
+    list1.push_front(10); // Add 10 at the front
+    
+    // Range-based for loop
+    for (int item: list1){
+        cout << item << " ";
     }
-    cout << endl;
 
     return 0;
 }
