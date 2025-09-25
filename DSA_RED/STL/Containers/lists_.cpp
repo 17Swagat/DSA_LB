@@ -20,18 +20,12 @@ void printVector(const vector<int>& vec) {
 
 int main(){
     list<int> list1 = {1, 2, 3, 4, 5};
-    vector<int> vec1 = {1, 2, 3, 4, 5};
 
-    // Inserting into vector
-    vec1.insert(vec1.begin() + 2, 10); // Insert 10 at index 2
-    printVector(vec1); // Output: 1 2 10 3 4 5
+    // Inserting elements into <list>
+    auto it = list1.begin();
+    advance(it, 2); // Move iterator to the 3rd position
+    list1.insert(it, 10); // Insert 10 at the 3rd position
 
-    // Inserting into list
-    // *Little different from vector*
-    list1.insert(
-        next(list1.begin(), 2), // moving
-        10 // value
-    ); // Insert 10 at index 2
     printList(list1); // Output: 1 2 10 3 4 5
 
     return 0;
