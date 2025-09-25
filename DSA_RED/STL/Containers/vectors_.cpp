@@ -12,14 +12,16 @@ void printVector(vector<int> &vec){
 
 int main(){
 
-    vector<int> vec1(5);
-    cout << vec1.size() << "\n"; // 5
-    cout << vec1.capacity() << "\n"; // 5
+    vector<int> vec1(5, 1);
+    printVector(vec1);
 
-    vec1 = {1, 2, 3, 4, 5, 76};
+    vec1.push_back(2); // add an element at the end
 
-    cout << vec1.size() << "\n"; // 6
-    cout << vec1.capacity() << "\n"; // 6 
+    printVector(vec1);
+
+    vec1.pop_back(); // pop the last element
+
+    printVector(vec1);
 
     return 0;
 }
