@@ -12,8 +12,11 @@ int main()
         {3, "three"},
     };
 
-    for (auto &item: m){
-        cout << item.first << " : " << item.second << "\n";
+    unordered_map<int, string>::iterator it = m.begin();
+
+    while (it != m.end()) {
+        cout << it->first << " " << it->second << endl;
+        it++;
     }
 
     return 0;
