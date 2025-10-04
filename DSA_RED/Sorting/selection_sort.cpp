@@ -9,7 +9,7 @@ void selectionSort(vector<int> &nums){
         return;
     }
 
-    for (int i = 0; i < n; i++) {
+    for (int i = 0; i < n-1; i++) {
         int smallest = nums[i];
         int smallest_index = i;
         for (int k = i+1; k < n; k++){
@@ -29,7 +29,8 @@ void selectionSort(vector<int> &nums){
 
 int main(){
 
-    vector<int> nums = {-3,10, 5, 4, 3}; // {3, 4, 5, 10}
+    // vector<int> nums = {-3,10, 20, 5, 4, 3}; // {3, 4, 5, 10}
+    vector<int> nums = {-3,10, 10, 3, 20, 5, 4, 3}; // {3, 4, 5, 10}
 
     selectionSort(nums);
 
