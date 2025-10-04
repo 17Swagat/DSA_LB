@@ -26,12 +26,16 @@ int main(){
 
     // vector<int> nums = {8, 7,6, 5, 5, 4, 3, 2, 1};
     vector<int> nums = {1, 2, 3, 4, 5, 6, 7, 8};
-    int index = binarySearch(nums, 3);
-    // cout << index << "\n";
-    if (index != -1) {
-        cout << "Found element at index: " << index << "\n";
-        cout << "Element: " << nums[index];
+    int index = binary_search(nums.begin(), nums.end(), 6);
+    if (index) {
+        cout << "Found";
     }
+    // int index = binarySearch(nums, 3);
+    // cout << index << "\n";
+    // if (index != -1) {
+    //     cout << "Found element at index: " << index << "\n";
+    //     cout << "Element: " << nums[index];
+    // }
     
     return 0;
 }
