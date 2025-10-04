@@ -26,7 +26,11 @@ int main(){
 
     // #3
     vector<int> vec1 = {5, 23, 1, 0, 10};
-    sort(vec1.begin(), vec1.end(), my_comparator);  // sorting in <DESCENDING ORDER>
+    // sort(vec1.begin(), vec1.end(), my_comparator);  // sorting in <DESCENDING ORDER>
+    // sorting in <DESCENDING ORDER>
+    sort(vec1.begin(), vec1.end(), [](int &a, int &b){
+        return (a > b);
+    }); 
     for (auto i: vec1) {
         cout << i << " ";
     }
