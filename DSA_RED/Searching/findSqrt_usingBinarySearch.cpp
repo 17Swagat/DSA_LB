@@ -34,28 +34,28 @@ int mySqrt(int x)
 
 // double calculatePrecision(double num, int target, int precision)
 // {
-//     double factor = 1;
 //     double ans = num;
+//     double factor = 1.0;
+
 //     for (int i = 0; i < precision; i++)
 //     {
 //         factor /= 10;
-//         if ((num * num) == target)
+
+//         // Try adding factor up to 9 times
+//         for (int k = 0; k < 9; k++)
 //         {
-//             ans = num;
-//             continue;
-//         }
-//         for (int k = 1; k < 10; k++)
-//         {
-//             num += factor;
-//             if ((num * num) <= target)
+//             double test = ans + factor;
+//             if (test * test <= target)
 //             {
-//                 ans = num;
-//             } else {
+//                 ans = test;
+//             }
+//             else
+//             {
 //                 break;
 //             }
 //         }
 //     }
-    
+
 //     return ans;
 // }
 
@@ -63,33 +63,29 @@ double calculatePrecision(double num, int target, int precision)
 {
     double ans = num;
     double factor = 1.0;
-    
+
     for (int i = 0; i < precision; i++)
     {
         factor /= 10;
-        
-        // Try adding factor up to 9 times
-        for (int k = 0; k < 9; k++)
+        for (int k = 0; k < 10; k++)
         {
             double test = ans + factor;
             if (test * test <= target)
             {
                 ans = test;
-            }
-            else
-            {
+            } else {
                 break;
             }
         }
     }
-    
     return ans;
 }
 
 int main()
 {
-    int num = mySqrt(111); // 10.440
+    int target = 26;//111
+    int num = mySqrt(target); 
     cout << num << "\n";
-    double ans = calculatePrecision(num, 111, 3);
+    double ans = calculatePrecision(num, target, 3);
     cout << ans << "\n";
 }

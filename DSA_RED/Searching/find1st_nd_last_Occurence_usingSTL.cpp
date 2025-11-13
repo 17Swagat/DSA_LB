@@ -1,30 +1,89 @@
 #include <iostream>
 #include <vector>
 #include <algorithm>
+#include <limits.h>
 
-std::pair<int, int> findFirstAndLast(const std::vector<int>& vec, int target) {
-    auto firstIt = std::lower_bound(vec.begin(), vec.end(), target);
-    auto lastIt = std::upper_bound(vec.begin(), vec.end(), target);
+using namespace std;
 
-    if (firstIt == vec.end() || *firstIt != target) {
-        return {-1, -1}; // target not found
+// 1st occurence
+int firstOccurence(vector<int> &nums, int target)
+{
+    int store = -1;
+    int s = 0;
+    int e = nums.size() - 1;
+    while (s < e)
+    {
+        int mid = (s + (e - s) / 2);
+        if (nums[mid] == target)
+        {
+            if ((store == -1) || (mid < store))
+            {
+                store = mid;
+            }
+        }
+        else
+        {
+            if (nums[mid] < target)
+            {
+                s = mid + 1;
+            }
+            else
+            {
+                e = mid - 1;
+            }
+        }
     }
 
-    int firstIndex = std::distance(vec.begin(), firstIt);
-    int lastIndex = std::distance(vec.begin(), lastIt) - 1;
-
-    return {firstIndex, lastIndex};
+    return store;
 }
 
-int main() {
-    std::vector<int> sortedVec = {1, 2, 4, 4, 4, 5, 6};
-    int target = 4;
+// Last occurence
+int lastOccurence(vector<int> &nums, int target)
+{
+    int s = 0;
+    int e = nums.size() - 1;
+    int store = -1;
+    while (s <= e)
+    {
+        int mid = (s + (e - s) / 2);
+        if (nums[mid] == target)
+        {
+            if ((mid > store) || (store == -1))
+            {
+                store = mid;
+            }
+        }
+        else
+        {
+            if (nums[mid] < target)
+            {
+                s = mid + 1;
+            }
+            else
+            {
+                e = mid - 1;
+            }
+        }
+    }
 
-    auto [first, last] = findFirstAndLast(sortedVec, target);
-    if (first != -1)
-        std::cout << "First occurrence: " << first << "\nLast occurrence: " << last << "\n";
-    else
-        std::cout << "Element not found\n";
+    return store;
+}
+
+vector<int> searchRange(vector<int> &nums, int target)
+{
+    int a = firstOccurence(nums, target);
+    int b = lastOccurence(nums, target);
+    vector<int> result = {a, b};
+    return result;
+}
+
+int main()
+{
+    vector<int> a = {5, 7, 7, 8, 8, 10};
+    int target = 8;
+    vector<int> result = searchRange(a, target);
+
+    cout << result[0] << " " << result[1];
 
     return 0;
 }
