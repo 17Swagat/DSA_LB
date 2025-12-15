@@ -4,25 +4,7 @@
 
 using namespace std;
 
-// int missingNumInSortedArray(vector<int> &arr){
-//     int store = arr.size(); //-1;
-//     int s = 0;
-//     int e = arr.size() - 1;
-
-//     while (s <= e){
-//         int mid = (s + (e-s)/2);
-
-//         if (arr[mid] == mid)
-//             s = mid + 1;
-//         else if (arr[mid] != mid) {
-//             store = mid;
-//             e = mid - 1;
-//         }
-//     }
-
-//     return store;
-// }
-
+/*
 int missingNumInSortedArray(vector<int> &nums)
 {
     // Revising
@@ -53,11 +35,39 @@ int missingNumInSortedArray(vector<int> &nums)
     return missing_num;
 }
 
+*/
+
+// Revision:
+int missingNumInSortedArray(vector<int> &arr)
+{
+    int store = -1;
+    int s = 0;
+    int e = arr.size() - 1;
+    while (s <= e)
+    {
+        int mid = (s + (e - s) / 2);
+        if (arr[mid] != mid)
+        {
+            store = mid;
+            e = mid - 1;
+        }
+        else
+        {
+            s = mid + 1;
+        }
+    }
+    if (store == -1)
+    {
+        store = arr.size();
+    }
+    return store;
+}
+
 int main()
 {
-    // std::vector<int> arr = {0, 1, 2, 3, 4, 6, 7, 8};
-    // std::vector<int> arr = {1, 2, 3, 4, 5, 6, 7, 8};
-    std::vector<int> arr = {0, 1, 2, 3};
+    // std::vector<int> arr = {0, 1, 2, 3, 4, 6, 7, 8}; // "5" missing
+    // std::vector<int> arr = {1, 2, 3, 4, 5, 6, 7, 8}; // "0" missing
+    std::vector<int> arr = {0, 1, 2, 3}; // "4" missing
 
     int missing_num = missingNumInSortedArray(arr);
     cout << missing_num << "\n";
